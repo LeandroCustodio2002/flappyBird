@@ -217,10 +217,6 @@ extends ParallaxBackground
 var background: Vector2 = Vector2()
 
 
-func _ready():
-	pass 
-
-
 func _process(_delta):
     # Este codigo faz com que o fundo ande automaticamente caso o jogador esteja vivo
 	if Global.vida:
@@ -254,7 +250,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Global.vida:
 		self.position.x -= 2
 
@@ -278,14 +274,14 @@ extends Area2D
 var ponto = 1
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if ponto and Global.vida:
 		$AudioStreamPlayer2D.play()
 		Global.pontos += 1
 		self.hide()
 		ponto = 0
 
-func _process(delta):
+func _process(_delta):
 	$AnimationPlayer.play("coin")
 
 ```
@@ -322,7 +318,7 @@ func _on_timer_timeout():
 	$Timer.start(delay)
 
 	
-func _process(delta):
+func _process(_delta):
 	$Label.text = str(Global.pontos)
 
 ```
@@ -356,7 +352,7 @@ func _on_button_1_pressed():
 	Global.novo_recorde = false
 	get_tree().change_scene_to_file("res://cenas/tutorial.tscn")
 
-func _process(delta):
+func _process(_delta):
 	$VBoxContainer/Recorde.text = str("Recorde atual: ",Global.recorde)
 	$VBoxContainer/Pontuacao.text = str("Pontuação: ",Global.pontos)
 	
@@ -393,7 +389,7 @@ func _ready():
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		Global.vida = true
 		Global.pontos = 0
