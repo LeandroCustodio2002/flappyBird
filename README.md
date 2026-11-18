@@ -1,50 +1,78 @@
-<h1> Flappy Bird Clone 
-<img alt="leo-bird" height="40" src="https://github.com/LPHBackspace/flappy_bird_clone/blob/main/imagens_readme/flappy_bird_icon.png">
-</h1>
+<div align="center">
 
-<img height="500" src="https://github.com/LPHBackspace/flappy_bird_clone/blob/main/imagens_readme/flappy_leo1.png"></img>
-<br>
-<a href="https://youtu.be/ZRAgJsmeNho">Vídeo demonstrativo</a>
+# 🐦 Flappy Bird em Godot
 
+**Um clone de Flappy Bird feito na Godot 4, com três fases, parallax, moedas e recorde.**
 
-<div>
-<h1>Versão do Godot <img alt="leo-godot" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/godot/godot-original.svg"></h1> 
+![Godot](https://img.shields.io/badge/Godot%204-478CBF?logo=godotengine&logoColor=white)
+![GDScript](https://img.shields.io/badge/GDScript-355570?logo=godotengine&logoColor=white)
+
+<img src="imagens_readme/flappy_leo1.png" alt="Pássaro azul voando entre obstáculos de pedra, com uma moeda à frente" width="300">
+
+### 🎬 [Ver o vídeo demonstrativo](https://youtu.be/ZRAgJsmeNho)
+
 </div>
 
-- 4.0
+---
 
+## 🎮 O que é
 
+Um jogo de pássaro que voa entre obstáculos, feito na **Godot 4** como estudo de desenvolvimento de jogos. A cada partida o pássaro ganha uma cor aleatória, e o cenário, os obstáculos e a música mudam conforme a pontuação sobe.
 
-<h1>Features implementadas ⭐</h1>
+## ⌨️ Controles
 
-- Mecânica de Voo do personagem
-- Efeito de Parallax no Background
-- Instanciamento de Obstáculos / Moedas
-- Contagem de pontos
-- Mudanças de background
-- Tela de Game Over 
-- Animação do personagem
-- Mudanças de cor do personagem de forma aleatória
-- Trocas de música de fundo
+| Tecla | Ação |
+|---|---|
+| `Espaço`, `Enter` ou clique | Bater as asas / começar a partida |
+| `Esc` | Fechar o jogo |
 
+## ✨ Funcionalidades
 
-<h1>Acessar o projeto 🧾</h1>
+- **Física de voo.** O pássaro cai com a gravidade, sobe a cada toque e inclina o bico conforme a velocidade.
+- **Fundo com parallax.** As camadas do cenário andam em velocidades diferentes, dando sensação de profundidade.
+- **Obstáculos gerados sozinhos.** Um novo par de obstáculos aparece a cada 2 segundos, numa altura aleatória.
+- **Moedas.** Cada obstáculo traz uma moeda no vão. Pegar a moeda vale 1 ponto.
+- **Três fases.** O cenário, os obstáculos e a música mudam conforme a pontuação:
 
-<p>Para abrir o projeto em sua máquina, siga os seguintes passos</p>
+  | Pontos | Fase |
+  |---|---|
+  | 0 a 30 | 🌲 Campo, obstáculos de pedra |
+  | 31 a 60 | ❄️ Neve |
+  | 61 ou mais | 🏜️ Deserto |
 
-- Baixe o arquivo como um zip
-- Após extrair o arquivo em um local de sua preferência, abra o Godot 4.0 e procure o arquivo "Project.godot", assim como demonstrado na imagem abaixo:
+- **Cor aleatória.** O pássaro ganha uma combinação de cores diferente em cada partida.
+- **Game over e recorde.** Ao bater, aparece a tela com a pontuação da partida e o recorde atual, e um aviso de "Novo recorde!" quando ele é superado.
 
-<img src="https://github.com/LPHBackspace/flappy_bird_clone/blob/main/imagens_readme/godott.PNG">
+## ▶️ Como rodar
 
-<h1>Implementação de features 🧾</h1>
+1. Instale a [Godot 4](https://godotengine.org/download/) (o projeto está configurado na versão **4.3**).
+2. Clone o repositório:
 
-<p>Siga o turorial em: </p>
+   ```bash
+   git clone https://github.com/LeandroCustodio2002/flappyBird.git
+   ```
 
-<h1>Fontes das imagens 🖼️</h1>
+3. Na Godot, clique em **Importar** e selecione o arquivo `project.godot` da pasta.
+4. Aperte **F5** para jogar.
 
-- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngitem.com%2Fmiddle%2FiimbwJh_flappy-bird-bird-png-transparent-png%2F&psig=AOvVaw2DHMET3zfAw3O3cvT5r9mS&ust=1672428751968000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCICTm9_In_wCFQAAAAAdAAAAABAP">Flappy Bird</a>
-- <a href="https://github.com/bitbrain/godot-tutorials/tree/main/parallax-scrolling/godot-project/parallax">Fundo Paralax</a>
-- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.seekpng.com%2Fima%2Fu2e6y3o0t4t4t4w7%2F&psig=AOvVaw3ZMWzKatbFl31h7fdNxa5x&ust=1672428934359000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJC9nLbJn_wCFQAAAAAdAAAAABAI">Moedas</a>
-- Obstáculos das 3 fases: Autorais
-- Chão das 3 fases: Autorais
+## 📚 Tutorial
+
+O arquivo [`TUTORIAL.md`](TUTORIAL.md) ensina a montar o jogo do zero, passo a passo e com prints: estrutura de pastas, script global, personagem, parallax, obstáculos, moedas, pontuação e tela de game over.
+
+## 📁 Estrutura
+
+| Pasta | Conteúdo |
+|---|---|
+| `cenas/` | Cenas do jogo: tela inicial (`tutorial`), partida (`main`), personagem, obstáculo, moeda, cenário, menu de game over e música |
+| `scripts/` | Lógica em GDScript. O `Global.gd` guarda vida, pontos, fase, recorde e a cor do pássaro |
+| `sprites/` | Pássaro, moeda, obstáculos e cenários das três fases |
+| `sons/` | Efeitos de voo, moeda e morte, e as músicas de fundo |
+| `font_style/` | Fonte usada nos textos |
+| `imagens_readme/` | Imagens do README e do tutorial |
+
+## 🙏 Créditos
+
+- **Pássaro e moedas:** imagens da internet ([pássaro](https://www.pngitem.com/middle/iimbwJh_flappy-bird-bird-png-transparent-png/), [moedas](https://www.seekpng.com/ima/u2e6y3o0t4t4t4w7/)).
+- **Fundo com parallax:** [bitbrain/godot-tutorials](https://github.com/bitbrain/godot-tutorials/tree/main/parallax-scrolling/godot-project/parallax).
+- **Obstáculos e chão das três fases:** autorais.
+- **Músicas de fundo:** trilha sonora de *Terraria* (Re-Logic).
